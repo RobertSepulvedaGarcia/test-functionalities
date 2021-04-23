@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { routes } from './utils/routes';
+import './App.scss';
 
 function App() {
   return (
