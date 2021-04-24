@@ -1,9 +1,31 @@
+$smartphone: ( max-width: 480px, );
+// $tablet: ( min-width: 480px, ) and ( max-width: 1082px, );
+$desktop: ( min-width: 1082px, ) and ( max-width: 1440px, );
+@mixin tablets {
+    @media (min-width: 480px, ) and (max-width: 1082px, ) {
+        @content;
+    }
+}
+
 .bg-img {
-    background-image: url('https://i.pinimg.com/originals/ae/f8/ee/aef8ee3342902cb9a09ee05c7a4e86cf.png');
+    background-image: url('../../assets/images/background.png');
     background-repeat: no-repeat;
     background-size: cover;
+    @media #{$smartphone} {
+        background-image: url('../../assets/images/bg-mobile.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .layout-login {
         background-color: rgba(0, 0, 0, 0.5);
         padding: 15% 30% 15% 30%;
+        @media #{$smartphone} {
+            padding: 35% 5% 0 5%;
+            height: 100vh;
+        }
+        @include tablets {
+            padding: 35% 20% 0 20%;
+            height: 100vh !important;
+        }
     }
 }
