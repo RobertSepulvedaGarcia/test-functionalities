@@ -1,5 +1,4 @@
 $smartphone: ( max-width: 480px, );
-// $tablet: ( min-width: 480px, ) and ( max-width: 1082px, );
 $desktop: ( min-width: 1082px, ) and ( max-width: 1440px, );
 @mixin tablets {
     @media (min-width: 480px, ) and (max-width: 1082px, ) {
