@@ -6,8 +6,13 @@ function App() {
   return (
     <Router>
       <Switch>
-        {routes.map((route) => (
-          <Route exact path={route.path} component={route.component} />
+        {routes.map((route, index) => (
+          <Route
+            key={index}
+            exact
+            path={route.path}
+            component={route.component}
+          />
         ))}
       </Switch>
     </Router>
