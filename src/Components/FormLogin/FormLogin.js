@@ -24,9 +24,9 @@ const FormLogin = () => {
     <>
       <Card className="card-login">
         <Header>
-          <p className="display-3 text-center">Login</p>
+          <p className="display-3 text-center font-weight-normal">Login</p>
         </Header>
-        <Body>
+        <Body className="px-5">
           <Form onSubmit={handleSubmit}>
             <Group controlId="formBasicEmail">
               <Label>Email address</Label>
@@ -47,7 +47,7 @@ const FormLogin = () => {
                   {formik.errors.email}
                 </div>
               ) : null}
-              <Text className="text-muted">
+              <Text className="text-info">
                 We'll never share your email with anyone else.
               </Text>
             </Group>
@@ -74,13 +74,19 @@ const FormLogin = () => {
               ) : null}
             </Group>
             <Row style={{ marginTop: '50px' }}>
-              <Col sm={12} lg={6} className="d-flex justify-content-center">
-                <Button variant="outline-primary" type="submit">
+              <Col sm={12} lg={12} className="d-flex justify-content-center ">
+                <Button variant="outline-light btn-block" type="submit">
                   Submit
                 </Button>
               </Col>
-              <Col sm={12} lg={6} className="d-flex justify-content-center">
-                <Button variant="outline-secondary">Create Account</Button>
+              <Col
+                sm={12}
+                lg={12}
+                className="d-flex justify-content-center mt-2"
+              >
+                <Button variant="outline-light btn-block">
+                  Create Account
+                </Button>
               </Col>
             </Row>
           </Form>

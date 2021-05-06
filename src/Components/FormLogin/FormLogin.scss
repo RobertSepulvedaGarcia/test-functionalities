@@ -1,9 +1,15 @@
+$smartphone: ( max-width: 480px, );
+$desktop: ( min-width: 1082px, ) and ( max-width: 1920px, );
 .card-login {
     background-color: transparent !important;
     border: solid white 1px !important;
     border-radius: 20px !important;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
     color: white;
+    width: 40vw !important;
+    @media #{$smartphone} {
+        width: 100% !important;
+    }
     #formBasicEmail,
     #formBasicPassword {
         background-color: transparent !important;
