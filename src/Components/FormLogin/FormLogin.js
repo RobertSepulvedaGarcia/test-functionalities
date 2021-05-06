@@ -1,6 +1,7 @@
 import React from 'react';
 import { validate } from './valid';
 import { useFormik } from 'formik';
+import { Link } from 'react-router-dom';
 import { Card, Form, Button, Row, Col } from 'react-bootstrap';
 import './FormLogin.scss';
 const FormLogin = () => {
@@ -84,9 +85,11 @@ const FormLogin = () => {
                 lg={12}
                 className="d-flex justify-content-center mt-2"
               >
-                <Button variant="outline-light btn-block">
-                  Create Account
-                </Button>
+                <Link to="/sign-up">
+                  <Button variant="outline-light btn-block">
+                    Create Account
+                  </Button>
+                </Link>
               </Col>
             </Row>
           </Form>
