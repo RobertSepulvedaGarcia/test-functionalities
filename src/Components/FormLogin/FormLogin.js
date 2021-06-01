@@ -3,10 +3,10 @@ import { validate } from './valid';
 import { useFormik } from 'formik';
 import { Link } from 'react-router-dom';
 import { Card, Form, Button, Row, Col } from 'react-bootstrap';
+import FormInput from '../FormInput/FormInput';
 import './FormLogin.scss';
 const FormLogin = () => {
   const { Body, Header } = Card;
-  const { Group, Label, Control, Text } = Form;
 
   const formik = useFormik({
     initialValues: {
@@ -29,51 +29,47 @@ const FormLogin = () => {
         </Header>
         <Body className="px-5">
           <Form onSubmit={handleSubmit}>
-            <Group controlId="formBasicEmail">
-              <Label>Email address</Label>
-              <Control
-                type="email"
-                name="email"
-                placeholder="Enter email"
-                onChange={handleChange}
-              />
-              {formik.errors.email ? (
-                <div
-                  style={{
-                    color: 'red',
-                    fontStyle: 'italic',
-                    fontSize: '15px',
-                  }}
-                >
-                  {formik.errors.email}
-                </div>
-              ) : null}
-              <Text className="text-info">
-                We'll never share your email with anyone else.
-              </Text>
-            </Group>
+            <FormInput
+              control={'formBasicEmail'}
+              label={'Email address'}
+              type={'email'}
+              name={'email'}
+              placeholder={'Enter email'}
+              text={"We'll never share your email with anyone else"}
+              handler={handleChange}
+            />
+            {formik.errors.email ? (
+              <div
+                style={{
+                  color: 'red',
+                  fontStyle: 'italic',
+                  fontSize: '15px',
+                }}
+              >
+                {formik.errors.email}
+              </div>
+            ) : null}
 
-            <Group controlId="formBasicPassword">
-              <Label>Password</Label>
-              <Control
-                type="password"
-                name="password"
-                placeholder="Password"
-                onChange={handleChange}
-                autoComplete="on"
-              />
-              {formik.errors.password ? (
-                <div
-                  style={{
-                    color: 'red',
-                    fontStyle: 'italic',
-                    fontSize: '15px',
-                  }}
-                >
-                  {formik.errors.password}
-                </div>
-              ) : null}
-            </Group>
+            <FormInput
+              control={'formBasicPassword'}
+              label={'Password'}
+              type={'password'}
+              name={'password'}
+              placeholder={'Password'}
+              handler={handleChange}
+            />
+            {formik.errors.email ? (
+              <div
+                style={{
+                  color: 'red',
+                  fontStyle: 'italic',
+                  fontSize: '15px',
+                }}
+              >
+                {formik.errors.email}
+              </div>
+            ) : null}
+
             <Row style={{ marginTop: '50px' }}>
               <Col sm={12} lg={12} className="d-flex justify-content-center ">
                 <Button variant="outline-light btn-block" type="submit">
